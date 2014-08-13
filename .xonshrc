@@ -1,0 +1,35 @@
+if '/usr/local/bin' not in $PATH:
+    $PATH.insert(0, '/usr/local/bin')
+
+$EDITOR = 'vim'
+# Switch into directory paths (no cd required)
+$AUTO_CD = True
+
+# Aliases
+aliases['ex'] = 'vim ' + $HOME + '/.xonshrc'
+aliases['ev'] = 'vim ' + $HOME + '/.vimrc'
+aliases['src'] = 'source ' + $HOME + '/.xonshrc'
+aliases['.f'] = 'cd ' + $HOME + '/git/DotFiles'
+# Slick Git
+aliases['gst'] = 'git status'
+aliases['grm'] = 'git rm'
+aliases['ga'] = 'git add'
+aliases['gb'] = 'git branch'
+aliases['gba'] = 'git branch --all'
+aliases['gd'] = 'git diff'
+aliases['gc'] = 'git commit'
+aliases['gc!'] = 'git commit --amend --no-edit'
+aliases['glg'] = 'git log --stat --color'
+aliases['glgp'] = 'git log --stat --color -p'
+def __ggforce__(args, stdin=None):
+    import builtins
+    curr_branch = builtins.__xonsh_env__['FORMATTER_DICT']['curr_branch']()
+    if curr_branch:
+        git push origin @(curr_branch.strip()) -f
+    else:
+        print('Nothing to force push.')
+aliases['ggforce'] = __ggforce__
+
+sh -c "$HOME/.config/base16-shell/base16-atelierforest.dark.sh"
+
+# vim:set ft=python:

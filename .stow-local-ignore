@@ -1,0 +1,6 @@
+README.*
+\.git
+\.gitmodules
+\.gitignore
+.*\.itermcolors$
+gnome-base16.*

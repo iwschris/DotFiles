@@ -1,0 +1,17 @@
+*.swp
+*.swo
+*~
+*#
+.#*
+.nfs*
+.DS_Store
+.ropeproject
+*.orig
+.tern-port
+# Python virtualenv
+.env
+.venv
+env
+tags
+dump.rdb
+srecode-map.el

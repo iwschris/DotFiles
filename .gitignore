@@ -1,0 +1,13 @@
+.config/fish/fish_history
+.config/fish/fishd.*
+.config/pudb/saved-*
+.config/git_iws
+.config/configstore/
+.vim/plugged/
+.vim/cache/
+.vim/tmp/
+.vim/undo/
+.vim/.netrwhist
+.vim/autoload/plug.vim*
+.ipython/*
+.ipython/profile_default/ipython_config.py
